@@ -10,8 +10,8 @@ public class Polynomial{
 	public int[] exponents;
 	
 	public Polynomial() {
-		this.coefficients = new double[0];
-		this.exponents = new int[0];
+		this.coefficients = new double[1];
+		this.exponents = new int[1];
 	}
 	
 	public Polynomial(double[] coefficients, int[] exponents){
@@ -117,6 +117,9 @@ public class Polynomial{
 				counter += 1;
 			}
 		}
+		if (counter == 0) {
+			return new Polynomial();
+		}
 		int index = 0;
 		double [] finalco = new double [counter];
 		int [] finalex = new int [counter];
@@ -144,6 +147,9 @@ public class Polynomial{
 			Polynomial med = new Polynomial(medco, medex);
 			
 			result = result.add(med);
+		}
+		if (result.exponents.length == 0) {
+			return new Polynomial();
 		}
 		return result;
 	}

@@ -70,5 +70,15 @@ public class Driver {
 		s.saveToFile("test");
 		s = new Polynomial();
 		s.saveToFile("Test_blank");
+		
+		
+		// Test for 0
+		Polynomial zero = new Polynomial();
+		Polynomial add_zero = zero.add(p1);
+		add_zero.saveToFile("add_zero");
+		Polynomial mult_zero1 = zero.multiply(p1);
+		mult_zero1.saveToFile("mult_zero1");
+		Polynomial mult_zero2 = p1.multiply(zero);
+		mult_zero2.saveToFile("mult_zero2");
 	}
 }
